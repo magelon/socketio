@@ -29,10 +29,26 @@ io.sockets.on('connection',function(socket){
 
 		socket.on('login',function(username){
 			socket.username=username;
+			if(!socket.username){
+				socket.username=socket.id;
+			}
 			socket.emit('serverMessage','Currently looged in as:'+username);
 			socket.broadcast.emit('serverMessage','User '+username+' logged in');
 		});
-		
+
+		//let client login event emitter
 		socket.emit('login');
+
+		//servermessage when socket user disconnected
+		socket.on('disconnect', function() {
+ 		if (! socket.username) {
+ 		socket.username = socket.id;
+ 		}
+ 		socket.broadcast.emit('serverMessage', 'User ' + socket.username + ' disconnected');
+ 		});
+
+
+
+
 
 });
