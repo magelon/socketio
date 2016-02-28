@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Socket.IO example application</title>
-		
+
 <style type="text/css">
  #input {
  width: 200px;
@@ -17,9 +17,9 @@
  padding: 8px;
  }
 </style>
-				
 
-		<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+
+		<script src="http://localhost:4000/socket.io/socket.io.js"></script>
 
 		<script>
 window.onload = function(){
@@ -30,24 +30,24 @@ window.onload = function(){
 			function addMessage(message){
 				var newMessageElement = document.createElement('div');
 				var newMessageText = document.createTextNode(message);
-				
+
 				newMessageElement.appendChild(newMessageText);
 				messagesElement.insertBefore(newMessageElement,lastMessageElement);
 				lastMessageElement=newMessageElement;
 			}
-			
+
 			var socket = io.connect('http://localhost:4000');
 			socket.on('serverMessage',function(content){
 				addMessage(content);
 			});
-	
+
 			var inputElement = document.getElementById('input');
 			inputElement.onkeydown = function(keyboardEvent) {
  			if (keyboardEvent.keyCode === 13) {
 			socket.emit('clientMessage', inputElement.value);
  			inputElement.value = '';
 			return false;
-			 	} 
+			 	}
 				else {
 			 	return true;
 			 	}
