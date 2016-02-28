@@ -3,6 +3,22 @@
 	<head>
 		<title>Socket.IO example application</title>
 		
+<style type="text/css">
+ #input {
+ width: 200px;
+ }
+ #messages {
+ position: fixed;
+ top: 40px;
+ bottom: 8px;
+ left: 8px;
+ right: 8px;
+ border: 1px solid #EEEEEE;
+ padding: 8px;
+ }
+</style>
+				
+
 		<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
 
 		<script>
@@ -11,5 +27,9 @@
 		</script>
 	</head>
 	<body>
+	Your message:
+
+		<input type="text" id="input">
+		<div id="messages"></div>
 	</body>
 </html>
