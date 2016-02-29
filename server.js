@@ -3,6 +3,9 @@ var httpd = require('http').createServer(handler);
 var io = require('socket.io').listen(httpd);
 var fs = require('fs');
 
+
+
+
 httpd.listen(4000);
 
 function handler(req,res){
@@ -20,7 +23,7 @@ function handler(req,res){
 
 }
 
-io.sockets.on('connection',function(socket){
+io.of('/chat').on('connection',function(socket){
 
 	socket.on('clientMessage',function(content){
 		socket.emit('serverMessage','You said:'+content);

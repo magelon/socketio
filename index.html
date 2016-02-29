@@ -23,7 +23,7 @@
 
 		<script>
 window.onload = function(){
-      //var socket = io.connect
+      var socket = io.connect('/chat');
 			var messagesElement = document.getElementById('messages');
 			var lastMessageElement = null;
 
@@ -36,7 +36,7 @@ window.onload = function(){
 				lastMessageElement=newMessageElement;
 			}
 
-			var socket = io.connect('http://localhost:4000');
+			//var socket = io.connect('http://localhost:4000');
 			socket.on('serverMessage',function(content){
 				addMessage(content);
 			});
