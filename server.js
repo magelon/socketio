@@ -1,14 +1,25 @@
 
-var httpd = require('http').createServer(handler);
-var io = require('socket.io').listen(httpd);
-var fs = require('fs');
+
+var express = require('express');
+var app = express();
 
 
 
+var http = require('http').Server(app);
 
-httpd.listen(4000);
+var io = require('socket.io')(http);
+//var fs = require('fs');
 
-function handler(req,res){
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
+http.listen(4000,function(){
+  console.log('app listening on port 4000!');
+
+});
+
+/*function handler(req,res){
 	fs.readFile(__dirname + '/index.html',
 		function(err,data){
 			if(err){
@@ -19,9 +30,7 @@ function handler(req,res){
 				res.end(data);
 	}
 );
-
-
-}
+}*/
 
 io.of('/chat').on('connection',function(socket){
 
