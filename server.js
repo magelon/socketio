@@ -21,9 +21,30 @@ function handler(req,res){
 }
 
 io.sockets.on('connection',function(socket){
+
 	socket.on('clientMessage',function(content){
 		socket.emit('serverMessage','You said:'+content);
+
+		if(!socket.username){
+			socket.username=socket.id;
+		}
+
+		var broadcast =socket.broadcast;
+		var room = socket.room;
+		var message = content;
+		var username = socket.username;
+
+		if(room){
+			broadcast.to(room);
+			broadcast.emit('serverMessage',username+' said:'+message);
+		}
+
+if(!room){
+		socket.room = 'hall';
+		socket.join(socket.room);
+		socket.broadcast.to(socket.room);
 		socket.broadcast.emit('serverMessage',socket.username+' said:'+content);
+				}
 		});
 
 
@@ -36,8 +57,7 @@ io.sockets.on('connection',function(socket){
 			socket.broadcast.emit('serverMessage','User '+username+' logged in');
 		});
 
-		//let client login event emitter
-		socket.emit('login');
+
 
 		//servermessage when socket user disconnected
 		socket.on('disconnect', function() {
@@ -47,8 +67,21 @@ io.sockets.on('connection',function(socket){
  		socket.broadcast.emit('serverMessage', 'User ' + socket.username + ' disconnected');
  		});
 
+		socket.on('join',function(room){
 
+			socket.leave(socket.room);
+			socket.room=room;
+			socket.join(socket.room);
 
+			if(!socket.username){
+				socket.suername = socket.id;
+						}
+						socket.emit('serverMessage','You joined room '+socket.room);
+						socket.broadcast.to(socket.room).emit('serverMessage','User '+socket.username+' joined this room');
 
+		});
+
+		//let client login event emitter
+		socket.emit('login');
 
 });
