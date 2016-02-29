@@ -1,0 +1,17 @@
+﻿{
+
+	"name":"BlazingHeart",
+	"skills":[
+	"http://elwiki.net/wiki/images/9/93/Spiral-Blast%28Elesis%29.png",
+	"http://elwiki.net/wiki/images/1/10/DAS.png",
+	"http://elwiki.net/wiki/images/2/2e/CSZE.png",
+	"http://elwiki.net/wiki/images/2/20/WS.png",
+	"http://elwiki.net/wiki/images/7/7d/MB.png"
+	
+	],
+	"skillinfo":[
+	"SpiralBlast [Special Active]:Smash the ground to create a wave of energy. Enemies are stunned with the initial hit.Annihilation SkillConsumes the Annihilation gauge and charges the Gale gauge100% Critical and ignores defensive skills (Guard/Knockdown) when Annihilation is activeFinal Enhanced SkillDamage is increased by 1.2 times.",
+	"Dodge and Slash[Active] Swiftly dash forward. Press Z.png to attack during mid-dash while increased dashing (press skill key again) is possible at later skill levels. You evade all attacks while dodging.Gale SkillConsumes the Gale gauge and charges the Annihilation gaugeReduces mana consumption and cooldown when Gale is activeFinal Enhanced Skill Press the skill key again after using Z.png to dash backwards."
+	]
+
+}

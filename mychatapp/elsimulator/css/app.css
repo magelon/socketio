@@ -1,0 +1,26 @@
+.char-images {
+  
+  width: 500px;
+  height: 500px;
+  bottom: 0;
+  overflow: hidden;
+  position: fixed;
+  float: left;
+}
+
+
+
+img.char {
+  float: left;
+  margin-right: 3em;
+  margin-bottom: 2em;
+  
+  padding: 2em;
+  height: 500px;
+  width: 500px;
+  display: none;
+}
+
+img.char:first-child {
+  display: block;
+  }

@@ -1,0 +1,32 @@
+﻿
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2">
+	Search:<input ng-model="query">	
+
+ 		<div class="col-md-2">
+<table>
+  <tr class="chars">
+    <td ng-repeat="char in chars | filter:query "
+	class="thumbnail char-listing"	
+		>
+
+	<a href="#/skillpage/{{char.id}}" class="thumb">
+	<img src="{{char.imgurl}}" alt="{{char.id}}"></a>
+	 
+	<a href="#/skillpage/st/{{char.name}}">{{char.name}}</a>
+     
+    </td>
+  </tr>
+</table>
+ 		</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+

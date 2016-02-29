@@ -1,0 +1,44 @@
+﻿
+[
+	{
+	"name":"BlazingHeart",
+	"imgurl":"http://elwiki.net/wiki/images/e/e2/BHNEW.png",
+	"id":"BH",
+	"age":1
+	},
+
+	{
+	"name":"ElementalMaster",
+	"imgurl":"http://elwiki.net/wiki/images/3/35/EMNEW.png",
+	"id":"EM",
+	"age":2
+	},
+	
+	{
+	"name":"GrandArcher",
+	"imgurl":"http://elwiki.net/wiki/images/7/74/GANEW.png",
+	"id":"GA",
+	"age":3
+	},
+
+	{
+	"name":"BladeMaster",
+	
+	"id":"BM",
+	"age":4
+	},
+
+	{
+	"name":"CodeEmpress",
+	
+	"id":"CE",
+	"age":5
+	},
+
+	{
+	"name":"TacticalTrooper",
+	
+	"id":"TT",
+	"age":6
+	}
+]

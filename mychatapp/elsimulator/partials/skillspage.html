@@ -1,0 +1,92 @@
+﻿skillspage
+
+<div class="row">
+  <div class="col-md-1">Lv.1</div>
+  <div class="col-md-1 imgwrap">
+	<img    src="{{skill0}}">
+	 <div  class="imgDescription">{{skillinfo0}}</div>
+ </div>
+  <div class="col-md-1 imgwrap2">
+	<img    src="{{skill1}}">
+	 <div  class="imgDescription2">{{skillinfo1}}</div>
+
+</div>
+  <div class="col-md-1">.col-md-1</div>
+</div>
+<div class="row"></div>
+<div class="row"></div>
+<div class="row"></div>
+<div class="row"></div>
+<div class="row"></div>
+<div class="row"></div>
+<div class="row"></div>
+<div class="row"></div>
+<div class="row"></div>
+<div class="row"></div>
+
+
+
+
+<style>
+
+
+.imgWrap {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+.imgDescription {
+  position: absolute;
+  top: 50;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:rgba(0, 0, 0, 0.5);
+  color: #fff;
+
+
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility opacity 0.2s;
+  
+}
+
+
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 1;
+}
+
+.imgWrap2 {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+.imgDescription2 {
+  position: absolute;
+  top: 50;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:rgba(0, 0, 0, 0.5);
+  color: #fff;
+
+
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility opacity 0.2s;
+  
+}
+
+
+.imgWrap2:hover .imgDescription2 {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+</style>
+
+<div>{{skill1info}}</div>

@@ -1,0 +1,39 @@
+﻿
+
+<h1>{{char.name}}</h1>
+
+<style>
+#small{
+width:100px;
+height:100px
+}
+
+#body{
+background:rgba(0, 0, 0, 0.6);
+
+}
+
+
+
+</style>
+
+
+<table>
+
+<tr class="thumbs">
+  <td ng-repeat="img in char.images">
+    <img id="small" ng-src="{{img}}" ng-mouseenter="setImage(img)">
+  </td>
+</tr>
+
+</table>
+
+<div class="char-images">
+
+<img ng-src="{{img}}"
+	
+	class="char"
+	ng-repeat="img in char.images"
+	ng-class="{active:mainImageUrl==img}">
+
+</div>
